@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8000;
 // ----------------------------- setting up server ---------------------------------\\
 
 initProductsTable();
-seedProducts();
+
 
 // ------------------------- setting up server settings ---------------------------\\
 app.use(express.json());
@@ -21,6 +21,8 @@ app.use("/api/products", router);
 app.get("/api", (req, res) => {
   res.json({ message: "hello from the server-side!" });
 });
+
+seedProducts();
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
